@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.1"
+
+    defaultConfig {
+        applicationId "com.yangmo.android.mp3recorder"
+        minSdkVersion 19
+        targetSdkVersion 23
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile project(':mp3Recorder')
+    //compile 'com.android.support:support-v7:25.0.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    compile 'com.github.hss01248:Toasty:2.0.1'
+    compile 'com.github.tianzhijiexian:logger:1.1.9'
+    compile 'com.jakewharton.timber:timber:4.5.1'
+}

@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+version = "1.0.4"
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.1"
+    resourcePrefix "Koolearn_MP3_record"
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 23
+    }
+
+    sourceSets.main {
+        jni.srcDirs = []
+        jniLibs.srcDir 'src/main/libs'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'org.greenrobot:eventbus:3.0.0'
+}
+
